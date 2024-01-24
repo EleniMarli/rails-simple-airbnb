@@ -23,7 +23,7 @@
 
       <div class='px-2 py-3 rounded border shadow'>
         <%= link_to 'Edit', edit_flat_path(@flat)%>
-        <%= link_to 'Remove', flat_path(@flat)%>
+        <%= link_to 'Remove', flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
       </div>
 
 
