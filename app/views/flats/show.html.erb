@@ -1,0 +1,30 @@
+
+  <div class="row m-0">
+    <div class='col mx-5'>
+
+      <div class='px-2 py-3 rounded border shadow my-4'>
+        <h2> <%=@flat.name%> </h2>
+        <h6> <%=@flat.address%> </h6>
+      </div>
+
+      <div class='px-2 py-3 rounded border shadow mb-4'>
+        <h3>A bit more about this flat...</h3>
+        <p> <%=@flat.description%> </p>
+
+      </div>
+
+      <div class='px-2 py-3 rounded border shadow'>
+        <h3>Details</h3>
+        <div class="d-flex justify-content-start">
+          <p>🧑‍🤝‍🧑 <%= @flat.number_of_guests %></p>
+          <p>💲 <%= @flat.price_per_night %></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='col mt-4'>
+      <p>Some booking info here</p>
+    </div>
+
+  </div>
