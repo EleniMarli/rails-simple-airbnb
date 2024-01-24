@@ -1,18 +1,21 @@
-<h2>All our flats (<%=@num%>)</h2>
+<div class='container mt-4'>
+  <h2>All our flats (<%=@num%>)</h2>
+  <div class="row">
+    <% @flats.each do |flat|%>
+      <div class='col-md-4 mb-4 p-0 border shadow rounded border'>
+        <div class='card-top p-4 bg-light'>
+          <h4><%= flat.name %></h4>
+          <p><%= flat.address %></p>
+          <div class="d-flex justify-content-left">
+            <p>🧑‍🤝‍🧑 <%= flat.number_of_guests %></p>
+            <p>💲 <%= flat.price_per_night %></p>
+          </div>
+        </div>
+        <div class='card-bottom w-100 p-4 border'>
+          <%= link_to 'More info', flat_path(flat)%>
+        </div>
 
-<% @flats.each do |flat|%>
-  <div class='card'>
-    <div class='card-top'>
-      <h4><%= flat.name %></h4>
-      <p><%= flat.address %></p>
-      <div>
-        <p>🧑‍🤝‍🧑 <%= flat.number_of_guests %></p>
-        <p>💲 <%= flat.price_per_night %></p>
       </div>
-    </div>
-    <div class='card-bottom'>
-      <%= link_to 'More info', flat_path(flat)%>
-    </div>
-
+    <%end%>
   </div>
-<%end%>
+</div>
