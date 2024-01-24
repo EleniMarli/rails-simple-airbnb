@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[create]
+  before_action :set_flat, only: %i[show edit update]
   def index
     @flats = Flat.all
     @num = Flat.count
@@ -10,13 +10,21 @@ class FlatsController < ApplicationController
   end
 
   def create
+    @flat = Flat.new(params[:id])
     @flat = Flat.new(flat_params)
     @flat.save
     redirect_to flat_path(@flat)
   end
 
   def show
-    @flat = Flat.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @flat.update(flat_params)
+    redirect_to flat_path(@flat)
   end
 
   private
@@ -26,6 +34,6 @@ class FlatsController < ApplicationController
   end
 
   def set_flat
-    @flat = Flat.new(params[:id])
+    @flat = Flat.find(params[:id])
   end
 end
